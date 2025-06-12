@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Reminder</title>
+    <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+    <script src="project.js"></script>
+
+    <div class="container">
+        <h1>Task Reminder</h1>
+
+        <div id="permission-alert" class="alert alert-warning" style="display: none;">
+            <span>Please enable notifications to get reminders for your tasks.</span>
+            <button id="enable-notifications" class="btn btn-primary">Enable</button>
+        </div>
+
+        <div id="success-alert" class="alert alert-success" style="display: none;">
+            <span>Task added successfully! You'll be notified before the due time.</span>
+            <button id="dismiss-alert" class="btn">&times;</button>
+        </div>
+
+        <div class="form-grid">
+            <div>
+                <div class="form-group">
+                    <label for="task-name">Task Name *</label>
+                    <input type="text" id="task-name" placeholder="Enter task name" required />
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" rows="3" placeholder="Add details about your task"></textarea>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="due-date">Due Date *</label>
+                    <input type="datetime-local" id="due-date" required />
+                </div>
+                <div class="form-group">
+                    <label for="reminder-time">Remind Before</label>
+                    <select id="reminder-time">
+                        <option value="5">5 minutes before</option>
+                        <option value="15">15 minutes before</option>
+                        <option value="30" selected>30 minutes before</option>
+                        <option value="60">1 hour before</option>
+                        <option value="120">2 hours before</option>
+                        <option value="1440">1 day before</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button id="add-task" class="btn btn-primary">Add Task</button>
+            <button id="clear-tasks" class="btn btn-danger">Clear All</button>
+        </div>
+
+        <div class="task-list">
+            <h2>Your Tasks</h2>
+            <div id="tasks-container">
+                <div class="empty-state">No tasks added yet. Create your first task above!</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+      
+    
